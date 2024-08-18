@@ -71,3 +71,9 @@ Instead of doing `sudo make install`, I use the Debian way (which allows for eas
 ```
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 ```
+
+## Install tpm
+
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
