@@ -40,7 +40,6 @@ vim.o.smarttab = true                         -- delete a tab-worth spaces at th
 vim.g.netrw_banner = 0                        -- disable banner
 
 
-
 -- auto-resize splits when terminal is resized
 vim.api.nvim_create_autocmd("VimResized", {
   pattern = "*",
