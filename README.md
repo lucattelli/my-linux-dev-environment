@@ -17,7 +17,11 @@ sudo apt update; sudo apt upgrade
 ## Install basic software
 
 ```
-sudo apt install git curl tmux htop iftop ubuntu-restricted-extras ubuntu-restricted-addons zsh cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 ninja-build gettext build-essential ripgrep -y
+sudo apt install build-essential cmake curl gettext git htop iftop libbz2-dev libffi-dev libfontconfig1-dev libfreetype6-dev liblzma-dev libncursesw5-dev libreadline-dev libsqlite3-dev libssl-dev libxcb-xfixes0-dev libxkbcommon-dev libxml2-dev libxmlsec1-dev ninja-build pkg-config python3 ripgrep tk-dev tmux ubuntu-restricted-addons ubuntu-restricted-extras xz-utils zlib1g-dev zsh -y
+
+
+
+
 
 sudo snap install bitwarden dbeaver-ce spotify
 ```

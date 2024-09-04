@@ -82,6 +82,9 @@ vim.keymap.set("v", ">", ">gv", { noremap = true })
 -- make Y behave like other capitals
 vim.keymap.set("n", "Y", "y$", { noremap = true })
 
+-- yank to clipboard
+vim.keymap.set({'n', 'v'}, "<leader>y", [["+y]])
+
 -- open netrw
 vim.keymap.set("n", "<leader>fe", ":Ex<CR>", { noremap = true })
 
