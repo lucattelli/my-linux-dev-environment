@@ -20,7 +20,7 @@ return {
 
       -- Mappings.
       -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-      local opts = { noremap=true, silent=true }
+      local opts = { noremap = true, silent = true }
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -34,26 +34,25 @@ return {
 
         -- Mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
-        local bufopts = { noremap=true, silent=true, buffer=bufnr }
+        local bufopts = { noremap = true, silent = true, buffer = bufnr }
+        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set('n', 'go', vim.lsp.buf.type_definition, bufopts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
         vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
         vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
         vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
         vim.keymap.set('n', '<leader>wl', function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, bufopts)
-        vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-        vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
       end
 
       local lsp_flags = {
-        -- This is the default in Nvim 0.7+
         debounce_text_changes = 150,
       }
 
@@ -73,19 +72,19 @@ return {
         }
       }
 
-      lspconfig.pyright.setup{
+      lspconfig.pyright.setup {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
       }
 
-      lspconfig.tsserver.setup{
+      lspconfig.tsserver.setup {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
       }
 
-      lspconfig.rust_analyzer.setup{
+      lspconfig.rust_analyzer.setup {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
@@ -109,15 +108,11 @@ return {
         capabilities = capabilities
       }
 
-      require"fidget".setup{}
+      require "fidget".setup {}
 
       local cmp = require('cmp')
 
       cmp.setup({
-        -- view = {
-        --   entries = 'native'
-        -- },
-
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -168,7 +163,6 @@ return {
           { name = 'cmdline' }
         })
       })
-
     end
   }
 }
