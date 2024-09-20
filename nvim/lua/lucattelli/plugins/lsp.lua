@@ -73,7 +73,11 @@ return {
       }
 
       lspconfig.pyright.setup {
-        on_attach = on_attach,
+        on_attach = function(client, bufnr)
+          local bufopts = { noremap = true, silent = true, buffer = bufnr }
+          on_attach(client, bufnr)
+          vim.keymap.set('n', '<leader>f', function() vim.cmd(":silent !black % && isort %") print("Ran black and isort on %") end, bufopts)
+        end,
         flags = lsp_flags,
         capabilities = capabilities,
       }
