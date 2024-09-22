@@ -32,7 +32,7 @@ return {
     "wolandark/Mitra-Vim",
     config = function()
       vim.opt.background = "dark"
-      vim.cmd.colorscheme('Mitra')
+      vim.cmd.colorscheme('mitra')
     end
   },
 }
