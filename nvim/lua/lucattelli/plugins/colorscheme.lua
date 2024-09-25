@@ -113,10 +113,10 @@ return {
   },
   {
     "tomasiser/vim-code-dark",
-    -- config = function ()
-    --   vim.opt.background = "dark"
-    --   vim.cmd("colorscheme codedark")
-    -- end
+    config = function ()
+      vim.opt.background = "dark"
+      vim.cmd("colorscheme codedark")
+    end
   },
   {
     "lunacookies/vim-substrata",
@@ -183,13 +183,13 @@ return {
   },
   {
     "haze/ambrosia.vim",
-    config = function()
-      vim.opt.background = "dark"
-      vim.cmd("colorscheme ambrosia")
-    end
+    -- config = function()
+    --   vim.opt.background = "dark"
+    --   vim.cmd("colorscheme ambrosia")
+    -- end
   },
   {
-    "nikolvs/vim-sunbather",
+    -- "nikolvs/vim-sunbather",
     -- config = function ()
     --   vim.opt.background = "dark"
     --   vim.cmd("colorscheme sunbather")
