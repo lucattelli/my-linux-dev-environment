@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
+      "mfussenegger/nvim-lint",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
@@ -72,14 +73,34 @@ return {
         }
       }
 
+
       lspconfig.pyright.setup {
         on_attach = function(client, bufnr)
-          local bufopts = { noremap = true, silent = true, buffer = bufnr }
           on_attach(client, bufnr)
-          vim.keymap.set('n', '<leader>f', function() vim.cmd(":silent !black % && isort %") print("Ran black and isort on %") end, bufopts)
+          local lint = require("lint")
+          lint.try_lint("mypy")
+          lint.try_lint("pylint")
+          vim.api.nvim_create_autocmd('BufWritePost', {
+            pattern = "*.py",
+            buffer = opts.buf,
+            callback = function()
+              lint.try_lint("mypy")
+              lint.try_lint("pylint")
+            end,
+          })
+          local bufopts = { noremap = true, silent = true, buffer = bufnr }
+          vim.keymap.set('n', '<leader>f', function() vim.cmd(":silent !black % && isort %") end, bufopts)
         end,
+
         flags = lsp_flags,
         capabilities = capabilities,
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "off",
+            }
+          }
+        }
       }
 
       lspconfig.tsserver.setup {
