@@ -113,10 +113,10 @@ return {
   },
   {
     "tomasiser/vim-code-dark",
-    config = function ()
-      vim.opt.background = "dark"
-      vim.cmd("colorscheme codedark")
-    end
+    -- config = function ()
+    --   vim.opt.background = "dark"
+    --   vim.cmd("colorscheme codedark")
+    -- end
   },
   {
     "lunacookies/vim-substrata",
@@ -197,10 +197,10 @@ return {
   },
   {
     "jssee/vim-cortado",
-    -- config = function ()
-    --   vim.opt.background = "dark"
-    --   vim.cmd("colorscheme cortado")
-    -- end
+    config = function ()
+      vim.opt.background = "dark"
+      vim.cmd("colorscheme cortado")
+    end
   },
   {
     "frenzyexists/aquarium-vim",
