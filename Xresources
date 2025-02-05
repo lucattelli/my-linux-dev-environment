@@ -14,4 +14,4 @@ wm.bar.font: Ubuntu 11
 i3xrocks.value.font: Ubuntu 11
 
 /* gnome-terminal */
-gnome.terminal.font:	Ubuntu Mono 12
+gnome.terminal.font:	Ubuntu Sans Mono 13
