@@ -1,0 +1,17 @@
+wm.gaps.inner.size: 0
+regolith.wallpaper.file: /usr/share/backgrounds/ubuntu-wallpaper-d.png
+regolith.lockscreen.wallpaper.file: /usr/share/backgrounds/ubuntu-wallpaper-d.png
+regolith.look.path: /usr/share/regolith-look/ayu-dark
+
+gtk.font_name: Ubuntu 11
+gtk.document_font_name: Ubuntu 11
+gtk.monospace_font_name: Ubuntu Mono 12
+
+/* i3bar window numbers */
+wm.bar.font: Ubuntu 11
+
+/* i3bar items */
+i3xrocks.value.font: Ubuntu 11
+
+/* gnome-terminal */
+gnome.terminal.font:	Ubuntu Mono 12

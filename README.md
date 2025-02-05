@@ -59,7 +59,7 @@ sudo snap install alacritty --classic
 ## Build & install neovim (from [here](https://github.com/neovim/neovim/blob/master/BUILD.md))
 
 ```
-sudo apt-get install ninja-build gettext cmake unzip curl build-essential
+sudo apt install ninja-build gettext cmake unzip curl build-essential
 
 git clone https://github.com/neovim/neovim
 
@@ -74,6 +74,12 @@ Instead of doing `sudo make install`, I use the Debian way (which allows for eas
 
 ```
 cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+```
+
+Then, I install the clipboard dependencies for XOrg and Wayland:
+
+```
+sudo apt install xsel xclip wl-clipboard
 ```
 
 ## Install tpm
