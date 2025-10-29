@@ -8,6 +8,8 @@ Moving to Arch Linux, by the way!
 
 ## Installation Cheat Sheet
 
+- Experimenting with this for LUKS and btrfs: https://gist.github.com/mihirchanduka/a9ba1c6edbfa068d2fbc2acb614c80e8
+
 - Brazilian keyboard `loadkeys br-abnt2`.
 - Use `iwctl` to set up wi-fi, then `station wlan0 connect <SSID`, then `ping ping.archlinux.org` to confirm its working.
 - `timedatectl set-ntp true` to update the system clock once connected to the internet.
