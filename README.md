@@ -1,10 +1,27 @@
-# My Linux Dev Environment
+# My Linux Dev Environment [WIP]
 
-A short guide on how I set up my development environment using Linux.
+Running notes to self on how I've set up my current development environment for personal use.
 
 # Installation
 
-Either Fedora or Ubuntu have been my go-to choices.
+Moving to Arch Linux, by the way!
+
+## Installation Cheat Sheet
+
+- Brazilian keyboard `loadkeys br-abnt2`.
+- Use `iwctl` to set up wi-fi, then `station wlan0 connect <SSID`, then `ping ping.archlinux.org` to confirm its working.
+- `timedatectl set-ntp true` to update the system clock once connected to the internet.
+- `fdisk -l` to list disks, then `fdisk /dev/<disk>`.
+
+
+
+
+
+
+
+
+
+
 
 # After Install (using Ubuntu as reference)
 
