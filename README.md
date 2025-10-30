@@ -10,14 +10,45 @@ Moving to Arch Linux, by the way!
 
 - Experimenting with this for LUKS and btrfs: https://gist.github.com/mihirchanduka/a9ba1c6edbfa068d2fbc2acb614c80e8
 
+### Initial Settings
+
 - Brazilian keyboard `loadkeys br-abnt2`.
 - Use `iwctl` to set up wi-fi, then `station wlan0 connect <SSID`, then `ping ping.archlinux.org` to confirm its working.
 - `timedatectl set-ntp true` to update the system clock once connected to the internet.
+
+### Partition for boot, swap, root, and home partitions
+
 - `fdisk -l` to list disks, then `fdisk /dev/<disk>`.
+- `mkfs.fat -F 32 /dev/<boot>`.
+- `mkswap /dev/<swap>`.
+- `swapon /dev/<swap>`.
 
+### Encrypt disk
 
+- `modprobe dm-crypt dm-mod`.
+- `cryptsetup luksFormat -v -s 512 -h sha512 /dev/<root>`.
+- `cryptsetup luksOpen /dev/<root> archroot`.
+- `mkfs.btrfs /dev/mapper/archroot`.
+- `mount /dev/mapper/archroot /mnt`.
+- `cd /mnt`.
+- `btrfs subvolume create @`.
+- `cd`.
+- `umount /nnt`.
 
+- `cryptsetup luksFormat -v -s 512 -h sha512 /dev/<home>`.
+- `cryptsetup luksOpen /dev/<home> archhome`.
+- `mkfs.btrfs /dev/mapper/archhome`.
+- `mount /dev/mapper/archhome /mnt`.
+- `cd /mnt`.
+- `btrfs subvolume create @home`.
+- `cd`.
+- `umount /nnt`.
 
+- `mount -o noatime,compress=zstd:1,space_cache=v2,discard=async,subvol=@ /dev/mapper/archroot /mnt`.
+- `mkdir /mnt/boot`.
+- `mount /dev/<boot> /mnt/boot`.
+- `mkdir /mnt/home`.
+- `mount -o noatime,compress=zstd:1,space_cache=v2,discard=async,subvol=@home /dev/mapper/archhome /mnt/home`
 
 
 
