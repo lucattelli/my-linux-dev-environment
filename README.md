@@ -50,8 +50,12 @@ Moving to Arch Linux, by the way!
 - `mkdir /mnt/home`.
 - `mount -o noatime,compress=zstd:1,space_cache=v2,discard=async,subvol=@home /dev/mapper/archhome /mnt/home`
 
+### Installing packages
 
-
+- `pacstrap -K /mnt base base-devel linux linux-firmware linux-headers sudo neovim intel-ucode btrfs-progs bash-completion efibootmgr hyprland iwd man intel-ucode firewalld nvidia nvidia-utils grub`.
+- `genfstab -U /mnt >> /mnt/etc/fstab`.
+- `arch-chroot /mnt`.
+- 
 
 
 
