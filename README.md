@@ -55,7 +55,18 @@ Moving to Arch Linux, by the way!
 - `pacstrap -K /mnt base base-devel linux linux-firmware linux-headers sudo neovim intel-ucode btrfs-progs bash-completion efibootmgr hyprland iwd man intel-ucode firewalld nvidia nvidia-utils grub`.
 - `genfstab -U /mnt >> /mnt/etc/fstab`.
 - `arch-chroot /mnt`.
-- 
+- `timedatectl set-ntp true`.
+- `timedatectl set-timezone America/Sao_Paulo`.
+- `hwclock --systohc`.
+- `vim /etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`.
+- `locale-gen`.
+- `echo LANG=en_US.UTF-8 > /etc/locale.conf`.
+- `echo KEYMAP=br-abnt2 > /etc/vconsole.conf`.
+- `echo <hostname> > /etc/hostname`.
+- `echo 127.0.0.1    <hostname>.localdomain   <hostname>`.
+
+
+- `pacman -S 
 
 
 
