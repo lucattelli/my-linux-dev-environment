@@ -52,7 +52,7 @@ Moving to Arch Linux, by the way!
 
 ### Installing packages
 
-- `pacstrap -K /mnt base base-devel linux linux-firmware linux-headers sudo neovim intel-ucode btrfs-progs bash-completion efibootmgr hyprland iwd man intel-ucode firewalld nvidia nvidia-utils grub`.
+- `pacstrap -K /mnt refind dhcpcd tmux chromium kitty nerd-fonts base base-devel linux linux-firmware linux-headers sudo neovim intel-ucode btrfs-progs bash-completion efibootmgr hyprland iwd man intel-ucode firewalld nvidia nvidia-utils grub`.
 - `genfstab -U /mnt >> /mnt/etc/fstab`.
 - `arch-chroot /mnt`.
 - `timedatectl set-ntp true`.
@@ -64,10 +64,6 @@ Moving to Arch Linux, by the way!
 - `echo KEYMAP=br-abnt2 > /etc/vconsole.conf`.
 - `echo <hostname> > /etc/hostname`.
 - `echo 127.0.0.1    <hostname>.localdomain   <hostname>`.
-
-
-- `pacman -S 
-
 
 
 
