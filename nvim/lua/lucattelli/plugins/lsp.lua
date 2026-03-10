@@ -59,7 +59,7 @@ return {
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      lspconfig.lua_ls.setup {
+      vim.lsp.config("lua_ls", {
         on_attach = on_attach,
         runtime = { version = "Lua 5.1" },
         flags = lsp_flags,
@@ -71,10 +71,11 @@ return {
             }
           }
         }
-      }
+      })
+      vim.lsp.enable("lua_ls")
 
 
-      lspconfig.pyright.setup {
+      vim.lsp.config("pyright", {
         on_attach = function(client, bufnr)
           on_attach(client, bufnr)
           local lint = require("lint")
@@ -101,43 +102,57 @@ return {
             }
           }
         }
-      }
+      })
+      vim.lsp.enable("pyright")
 
-      lspconfig.ts_ls.setup {
+      vim.lsp.config("ts_ls", {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable("ts_ls")
 
-      lspconfig.rust_analyzer.setup {
+      vim.lsp.config("rust_analyzer", {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable("rust_analyzer")
 
-      lspconfig.eslint.setup {
+      vim.lsp.config("eslint", {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities
-      }
+      })
+      vim.lsp.enable("eslint")
 
-      lspconfig.terraformls.setup {
+      vim.lsp.config("terraformls", {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities
-      }
+      })
+      vim.lsp.enable("terraformls")
 
-      lspconfig.tflint.setup {
+      vim.lsp.config("tflint", {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities
-      }
+      })
+      vim.lsp.enable("tflint")
 
-      lspconfig.gopls.setup {
+      vim.lsp.config("gopls", {
         on_attach = on_attach,
         flags = lsp_flags,
         capabilities = capabilities
-      }
+      })
+      vim.lsp.enable("gopls")
+
+      vim.lsp.config("clangd", {
+        on_attach = on_attach,
+        flags = lsp_flags,
+        capabilities = capabilities
+      })
+      vim.lsp.enable("clangd")
 
       require "fidget".setup {}
 
